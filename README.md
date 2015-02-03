@@ -4,7 +4,10 @@ This is Async utilities for lua with similar functional: https://github.com/caol
 ###Control Flow
 
 * [`waterfall`](#waterfall)
-ß
+
+
+
+
 <a name="waterfall" />
 ### waterfall(tasks, [callback])
 
@@ -27,7 +30,7 @@ __Arguments__
 __Example__
 
 ```lua
-sync.waterfall({
+async.waterfall({
     function (callback)
         callback(null, "one", "two");
     end,
