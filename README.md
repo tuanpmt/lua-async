@@ -20,7 +20,7 @@ __Arguments__
 
 * `tasks` - An array of functions to run, each function is passed a 
   `callback(err, result1, result2, ...)` it must call on completion. The first
-  argument is an error (which can be `null`) and any further arguments will be 
+  argument is an error (which can be `nil`) and any further arguments will be 
   passed as arguments in order to the next task.
 * `callback(err, [results])` - An optional callback to run once all the functions
   have completed. This will be passed the results of the last task's callback.
@@ -32,17 +32,17 @@ __Example__
 ```lua
 async.waterfall({
     function (callback)
-        callback(null, "one", "two");
+        callback(nil, "one", "two");
     end,
     function (callback, arg1, arg2)
     	--arg1 now equals "one" and arg2 now equals "two"
     	print(arg1, arg2)
-        callback(null, "three");
+        callback(nil, "three");
     end,
     function(callback, arg1)
         --arg1 now equals "three"
         print(arg1)
-        callback(null, "done");
+        callback(nil, "done");
     end
 }, function (err, result)
    -- result now equals "done"
