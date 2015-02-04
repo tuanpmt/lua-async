@@ -1,7 +1,8 @@
 local M = {}
-function M.waterfall(task, cb)
+
+function M.waterfall(tasks, cb)
 	local nextArg = {}
-	for i, v in pairs(task) do
+	for i, v in pairs(tasks) do
 		local error = false
 		v(function(err, ...)
 			local arg = {...}
@@ -11,9 +12,11 @@ function M.waterfall(task, cb)
 			end
 		end, unpack(nextArg))
 		if error then return cb("error") end
-		cb(nil, unpack(nextArg))
 	end
+	cb(nil, unpack(nextArg))
 end
 
-
+function M.eachSeries(arr, iterator, callback)
+	
+end
 return M
