@@ -1,7 +1,7 @@
 # lua-async
 This is Async utilities for lua with similar functional: https://github.com/caolan/async
 
-###Control Flow
+### Control Flow
 
 * [`waterfall`](#waterfall)
 
